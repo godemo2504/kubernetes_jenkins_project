@@ -7,7 +7,7 @@ LABEL project="Kubernetes"
 LABEL maintainer="godemo2504@gmail.com"
 
 # Installation des paquets nécessaires
-RUN dnf install -y httpd nano wget zip unzip curl && \
+RUN dnf install -y httpd nano git wget zip unzip curl && \
     dnf clean all
 
 # Définition du répertoire de travail
