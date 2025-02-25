@@ -16,7 +16,7 @@ RUN curl -L -o photogenic.zip https://www.free-css.com/assets/files/free-css-tem
     rm -rf photogenic photogenic.zip
 
 # Exposition du port HTTP
-EXPOSE 80
+EXPOSE 80 443
 
 # Lancement du serveur Apache en mode foreground
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
