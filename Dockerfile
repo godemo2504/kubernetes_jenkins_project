@@ -1,5 +1,7 @@
+# Utilisation d'AlmaLinux 8, alternative maintenue à CentOS 7
 FROM almalinux:8
 
+# Informations sur l'image
 LABEL author="Godemo2504"
 LABEL project="Kubernetes"
 LABEL maintainer="godemo2504@gmail.com"
@@ -8,14 +10,17 @@ LABEL maintainer="godemo2504@gmail.com"
 RUN dnf install -y httpd nano git wget zip unzip curl && \
     dnf clean all
 
+# Définition du répertoire de travail
 WORKDIR /var/www/html/
 
-# Téléchargement et installation du template
-RUN curl -L -o neogym.zip https://www.free-css.com/assets/files/free-css-templates/download/page296/neogym.zip && \
-    unzip neogym.zip && \
-    cp -rvf neogym/* ./ && \
-    rm -rf neogym neogym.zip
+# Téléchargement et installation du template Viking
+RUN curl -L -o viking.zip https://www.free-css.com/assets/files/free-css-templates/download/page285/viking.zip && \
+    unzip viking.zip && \
+    cp -rvf viking/* . && \
+    rm -rf viking viking.zip
 
+# Exposition du port HTTP
 EXPOSE 80
 
+# Lancement du serveur Apache en mode foreground
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
