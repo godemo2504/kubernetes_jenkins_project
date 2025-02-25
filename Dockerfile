@@ -13,11 +13,11 @@ RUN dnf install -y httpd nano git wget zip unzip curl && \
 # Définition du répertoire de travail
 WORKDIR /var/www/html/
 
-# Téléchargement et installation du template Viking
-RUN curl -L -o viking.zip https://www.free-css.com/assets/files/free-css-templates/download/page285/viking.zip && \
-    unzip viking.zip && \
-    cp -rvf viking/* . && \
-    rm -rf viking viking.zip
+# Téléchargement et installation du template
+RUN curl -L -o mediplus-lite.zip https://www.free-css.com/assets/files/free-css-templates/download/page296/mediplus-lite.zip && \
+    unzip mediplus-lite.zip && \
+    cp -rvf mediplus-lite/* . && \
+    rm -rf mediplus-lite mediplus-lite.zip
 
 # Exposition du port HTTP
 EXPOSE 80
