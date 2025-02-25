@@ -14,10 +14,10 @@ RUN dnf install -y httpd nano git wget zip unzip curl && \
 WORKDIR /var/www/html/
 
 # Téléchargement et installation du template
-RUN curl -L -o photogenic.zip https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip && \
-    unzip photogenic.zip && \
-    cp -rvf photogenic/* . && \
-    rm -rf photogenic photogenic.zip
+RUN curl -L -o neogym.zip https://www.free-css.com/assets/files/free-css-templates/download/page296/neogym.zip && \
+    unzip neogym.zip && \
+    cp -rvf neogym/* . && \
+    rm -rf neogym neogym.zip
 
 # Exposition du port HTTP
 EXPOSE 80
