@@ -1,5 +1,4 @@
 - hosts: node
-  remote_user: ubuntu
   become: true
   tasks:
      - name: create new deployment
