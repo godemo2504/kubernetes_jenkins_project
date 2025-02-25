@@ -5,7 +5,7 @@ LABEL project="Kubernetes"
 LABEL maintainer="godemo2504@gmail.com"
 
 # Installation des packages en une seule couche pour optimiser l'image
-RUN yum install -y httpd zip unzip curl && \
+RUN yum install -y httpd wget zip unzip curl && \
     yum clean all
 
 # Téléchargement et décompression du template
